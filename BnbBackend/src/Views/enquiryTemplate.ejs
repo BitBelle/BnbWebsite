@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Enquiry Received</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .email-header {
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .email-header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .email-body {
+      padding: 20px;
+    }
+    .email-body p {
+      margin: 10px 0;
+    }
+    .email-body .data-label {
+      font-weight: bold;
+      color: #555;
+    }
+    .email-footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background-color: #f1f1f1;
+      color: #666;
+    }
+    .email-footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    .email-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <h1>New User Enquiry</h1>
+    </div>
+    <div class="email-body">
+      <p><span class="data-label">Name:</span> <%= fullname %></p>
+      <p><span class="data-label">Email:</span> <%= email %></p>
+      <p><span class="data-label">Phone:</span> <%= phone %></p>
+      <p><span class="data-label">Message:</span></p>
+      <p style="border-left: 3px solid #4CAF50; padding-left: 10px; margin-top: 5px; color: #555;">
+        <%= message %>
+      </p>
+    </div>
+    <div class="email-footer">
+      <p>This enquiry was sent from your website. For any issues, please contact support.</p>
+      <p><a href="mailto:wainainamercy432@gmail.com">wainainamercy432@gmail.com</a></p>
+    </div>
+  </div>
+</body>
+</html>
