@@ -1,0 +1,13 @@
+####Booking
+POST http://localhost:/booking
+Content-Type: application/json
+
+{
+  "checkinDate": "2025-01-15",
+  "checkoutDate": "2025-01-20",
+  "fullname": "John Doe",
+  "email": "john.doe@example.com",
+  "phone": "1234567890",
+  "guests": "2"
+}
+
