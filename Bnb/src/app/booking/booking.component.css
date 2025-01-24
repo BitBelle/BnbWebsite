@@ -1,0 +1,230 @@
+.booking-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    background-color: #E8E9EB;
+}
+
+.header {
+    /* border: 1px solid black; */
+    height: 100px;
+    padding: 20px;
+    position: relative;
+    background-color: transparent;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/pexels.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7; /* reduces the opacity of the background image */
+    z-index: 0; /* places it behind the content */
+}
+
+.logo-navbar-container, 
+.book-heading {
+    position: relative;
+    z-index: 1; /* ensures content stays above the background image */
+}
+
+.logo-navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.nav-bar {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.book-heading {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0;
+    clear: both;
+    color: black;
+}
+
+
+/* The TDD form part */
+
+.booking-header {
+    /* border: 1px solid black; */
+    width: 50%;
+    /* height:50%; */
+    text-align: center;
+    margin: auto;
+    min-height: 150px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.137); /* Subtle box shadow */
+}
+
+.booking-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.booking-header p {
+    font-size: 16px;
+    color: #555;
+    margin: 0 0 20px 0;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px;
+    color: #999;
+    font-size: 18px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 10px 10px 35px; /* Extra left padding for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.input-container input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+/* span tag with error message */
+.form-group span {
+    font-style: italic;
+    color: red;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.submit-button {
+    width: 40%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto 0;
+    display: block;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #333;
+}
+
+/* Disabled button styling */
+.submit-button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6; /* make button appear faded */
+}
+
+.submit-button:disabled:hover {
+    background-color: #ccc; /* prevent hover effect when disabled */
+}
+
+
+/* General Error Message Styling */
+.error-message {
+    color: #d9534f; /* Red color for error */
+    font-size: 14px; /* Smaller text */
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Icon styling for error messages */
+.error-message i {
+    margin-right: 5px; /* Space between the icon and the text */
+    color: #d9534f; /* Matching red color */
+}
+
+/* Optional: Add a background color to the input fields with errors */
+.input-wrapper input.ng-touched.ng-invalid {
+    border-color: #d9534f; /* Red border for invalid fields */
+    background-color: #f8d7da; /* Light red background */
+}
+
+/* Optional: Add a background color to the select input with errors */
+.select-wrapper select.ng-touched.ng-invalid {
+    border-color: #d9534f; /* Red border for invalid select fields */
+    background-color: #f8d7da; /* Light red background */
+}
+
+/* Optional: Error messages that appear on focus loss (blur event) */
+.input-wrapper input.ng-touched.ng-invalid + .error-message,
+.select-wrapper select.ng-touched.ng-invalid + .error-message {
+    display: inline-block; /* Make error message visible */
+}
+
+/* Styling for the input field container */
+.input-wrapper {
+    position: relative;
+}
+
+/* Add some padding and margin to the error message */
+.error-message {
+    padding: 2px 5px;
+    margin-top: 5px;
+    font-weight: bold;
+}

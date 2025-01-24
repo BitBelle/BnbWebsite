@@ -1,0 +1,103 @@
+<div class="contact-container">
+    <header class="header">
+        <div class="logo-navbar-container">
+            <img alt="logo" src="logo.png" class="logo">
+            <div class="nav-bar">
+                <app-navbar></app-navbar>
+            </div>
+        </div>
+        <h1 class="contact-heading">Contact</h1>
+    </header>
+
+    <!-- Custom message component -->
+    <app-message *ngIf="message" [customMessage]="customMessage" [type]="messageType"></app-message>
+
+    <!-- main content -->
+    <div class="main-content">
+
+        <!-- location section -->
+        <div class="location-section">
+            <h1>Location</h1>
+            <button class="location-btn" (click)="openGoogleMaps()">Find us on map</button>
+        </div>
+
+        <!-- contact options -->
+        <div class="contact-options">
+            <div class="option">
+                <i class="fas fa-phone-alt"></i>
+                <p>Make a call</p>
+                <span>+254700000001</span>
+            </div>
+
+            <div class="option">
+                <i class="fas fa-envelope"></i>
+                <p>Send a mail</p>
+                <span>infoinquiry.com</span>
+            </div>
+
+            <div class="option">
+                <i class="fab fa-instagram"></i>
+                <p>Find us on Instagram</p>
+                <span>wanji_staycations</span>
+            </div>
+        </div>
+
+
+        <!-- contact form -->
+        <div class="contact-form">
+            <h2>Drop a line</h2>
+            <p>SEND YOUR MESSAGE</p>
+
+            <form (ngSubmit)="onSubmit()" #form="ngForm">
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Your name" name="fullname" ngModel #fullname="ngModel" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span *ngIf="fullname.touched && fullname.invalid && fullname.errors?.['required']"
+                        class="error-message">
+                        <i>Name is required!</i>
+                    </span>
+
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Email Address" name="email" ngModel #email="ngModel" required
+                            email>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span *ngIf="email.touched && email.invalid && email.errors?.['required']" class="error-message">
+                        <i>Email is required!</i>
+                    </span>
+                    <span *ngIf="email.touched && email.errors?.['email']" class="error-message">
+                        <i>Invalid email format!</i>
+                    </span>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Phone number" name="phone" ngModel #phone="ngModel" required>
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <span *ngIf="phone.touched && phone.invalid && phone.errors?.['required']" class="error-message">
+                        <i>Phone number is required!</i>
+                    </span>
+
+                    <div class="input-wrapper">
+                        <select name="enquiry" ngModel #enquiry="ngModel" required>
+                            <option value="" disabled selected>Make an enquiry</option>
+                            <option *ngFor="let enquiry of enquiries" [value]="enquiry">{{enquiry}}</option>
+                        </select>
+                    </div>
+                    <span *ngIf="enquiry.touched && enquiry.invalid && enquiry.errors?.['required']"
+                        class="error-message">
+                        Please select an enquiry type!
+                    </span>
+                </div>
+
+                <textarea placeholder="Message..." name="message" ngModel #message="ngModel" required></textarea>
+
+                <input type="submit" value="submit" class="submit-button" [disabled]="form.invalid">
+            </form>
+
+        </div>
+    </div>
+</div>

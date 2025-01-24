@@ -1,0 +1,254 @@
+/* header styling */
+
+.about-us-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    background-color: #E8E9EB;
+}
+
+.header {
+    /* border: 1px solid black; */
+    height: 100px;
+    padding: 20px;
+    position: relative;
+    background-color: transparent;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/pexels.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    /* reduces the opacity of the background image */
+    z-index: 0;
+    /* places it behind the content */
+}
+
+.logo-navbar-container,
+.about-heading {
+    position: relative;
+    z-index: 1;
+    /* ensures content stays above the background image */
+}
+
+.logo-navbar-container {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.nav-bar {
+    /* border: 1px solid black; */
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.about-heading {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0 0;
+    clear: both;
+    /*keep heading properly positioned below navbar*/
+    color: black;
+
+}
+
+/* content part */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.row1,
+.row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.432);
+    margin-bottom: 20px;
+}
+
+.row1 {
+    width: 60%;
+    background-color: #ffffff;
+}
+
+.row2 {
+    width: 75%;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+}
+
+.image-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid black; */
+
+}
+
+.image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.caption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 400px;
+    /* border: 1px solid black; */
+}
+
+.circle {
+    background: #ddd;
+    border-radius: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.circle h2 {
+    font-size: clamp(18px, 2.5vw, 24px);
+    margin: 10px 0;
+}
+
+.circle p {
+    font-size: clamp(10px, 2vw, 14px);
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.stylized-text {
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 0.8;
+}
+
+
+/* Responsive scaling for small devices */
+@media (max-width: 768px) {
+    
+    .row2 {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        
+    }
+
+    .circle {
+        padding: 25px;
+        max-width: 300px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        width: 100%;
+        height: 120px;
+        display: inline-block;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .circle h2 {
+        font-size: 20px;
+    }
+
+    .circle p {
+        font-size: 12px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .image {
+        width: 150px;
+        height: auto;
+        margin-top: 20px;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .row2 {
+        flex-direction: row;
+        justify-self: center;
+        align-items: center;
+        padding: 20px;
+        
+    }
+
+    .circle {
+        padding: 25px;
+        max-width: 300px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        width: 100%;
+        height: 120px;
+        display: inline-block;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .circle h2 {
+        font-size: 20px;
+    }
+
+    .circle p {
+        font-size: 12px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .image {
+        width: 150px;
+        height: auto;
+        margin-top: 20px;
+        
+    }
+}
+
+
+@media (max-width: 360px) {
+    .circle {
+        padding: 5px;
+    }
+
+    .circle h2 {
+        font-size: 16px;
+    }
+
+    .circle p {
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,26 @@
+<div class="navbar-wrapper">
+    <!-- burger menu -->
+    <button class="burger-menu" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <i class="burger-icon"></i>
+    </button>
+    <nav class="navbar" [class.open]="isMenuOpen">
+        <a routerLink="/">
+            <i class="fas fa-home"></i>Home
+        </a>
+        <a routerLink="/about-us">
+            <i class="fas fa-info-circle"></i>About Us
+        </a>
+        <a routerLink="/gallery">
+            <i class="fas fa-images"></i>Gallery
+        </a>
+        <a routerLink="/booking">
+            <i class="fas fa-calendar-check"></i>Booking
+        </a>
+        <a routerLink="/contact-us">
+            <i class="fas fa-envelope"></i>Contact
+        </a>
+    </nav>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

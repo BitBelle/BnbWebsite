@@ -1,0 +1,6 @@
+<div class="message-container" *ngIf="customMessage">
+  <div [ngClass]="{ success: type === 'success', error: type === 'error' }">
+    <p>{{ customMessage }}</p>
+    <button (click)="clearMessage()">x</button>
+  </div>
+</div>

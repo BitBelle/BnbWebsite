@@ -1,0 +1,190 @@
+.navbar-wrapper {
+    margin-top: 20px;
+}
+
+.navbar {
+    display: flex;
+    gap: 40px;
+    background-color: #A2A9AF;
+    width: max-content;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 50px;
+    text-align: left;
+    justify-content: right;
+
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    color: #745b0b;
+}
+
+.navbar i {
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.navbar.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.616);
+    backdrop-filter: blur(8px);
+    /* background-color: #A2A9AF; */
+    width: 90%;
+    padding: 15px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    left: auto; /*added this left*/
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.body-content {
+    transition: margin-top 0.3s ease; 
+}
+
+/* Adjusting value based on your navbar height */
+.navbar.open + .body-content {
+    margin-top: 70px; 
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.burger-icon {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.burger-icon::before {
+    top: -10px;
+}
+
+
+.burger-icon::after {
+    bottom: -10px;
+}
+
+
+
+/* Responsiveness */
+
+@media (max-width: 1024px) {
+    .navbar {
+        width: max-content;
+        gap: 30px;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Keep navbar hidden by default on smaller screens */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #A2A9AF;
+        width: 100%;
+        padding: 15px;
+        position: absolute;
+        top: 50px;
+        /* Adjust to fit below header */
+        left: 0;
+        right: 0;
+        z-index: 9999; 
+        border-radius: 10px;
+    }
+
+    /* Show navbar when open */
+    .navbar.open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* gap: 10px; */
+        /* background-color: #A2A9AF; */
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+        width: fit-content;
+        padding: 10px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* right: 10px; */
+        left: auto; /*change from 20px to auto*/
+        z-index: 9999;
+        border-radius: 10px;
+    }
+
+    /* Burger menu button styling */
+    .burger-menu {
+        display: block; /*burger menu visible */
+        position: absolute; /* Now it will move with the page */
+        top: 20px; /* Adjust the top position if needed */
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .navbar-wrapper {
+        margin-top: 0;
+    }
+
+    .navbar a {
+        font-size: 1em;
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .navbar {
+        width: 95%;
+        /* gap: 10px; */
+        padding: 10px;
+        right: 2.5%;
+    }
+}

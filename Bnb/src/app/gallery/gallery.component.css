@@ -1,0 +1,248 @@
+/* header styling */
+
+.gallery-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    background-color: #E8E9EB;
+}
+
+.header {
+    /* border: 1px solid black; */
+    height: 100px;
+    padding: 20px;
+    position: relative;
+    background-color: transparent;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/pexels.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    /* reduces the opacity of the background image */
+    z-index: 0;
+    /* places it behind the content */
+}
+
+.logo-navbar-container,
+.gallery-heading {
+    position: relative;
+    z-index: 1;
+    /* ensures content stays above the background image */
+}
+
+.logo-navbar-container {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.nav-bar {
+    /* border: 1px solid black; */
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.gallery-heading {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0;
+    clear: both;
+    color: black;
+}
+
+
+/* the boxes part */
+.boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box1,
+.box2,
+.box3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*hover effect*/
+}
+
+.box1:hover,
+.box2:hover,
+.box3:hover {
+    transform: scale(1.00);
+    /*increase the size on hover (bounce effect)*/
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.box1 .image,
+.box3 .image {
+    order: 0;
+    /* image comes first for box1 and box3 */
+}
+
+.box1 .text,
+.box3 .text {
+    order: 1;
+    /* Text comes before for box1 and box3 */
+
+}
+
+.box2 .image {
+    order: 1;
+    /*Text comes second for box2*/
+}
+
+.box2 .text {
+    order: 0;
+    /*Text comes first for box2*/
+}
+
+.image img {
+    width: 100px;
+    height: auto;
+}
+
+/* styling the images */
+.image,
+.text {
+    display: flex;
+    align-items: center;
+    /* Center the content vertically */
+}
+
+.image img {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* hover effect to zoom images */
+.box1:hover .image img,
+.box2:hover .image img,
+.box3:hover .image img {
+    transform: scale(1.05);
+    /* slightly zoom on hover */
+}
+
+/* ensure images align properly within their containers */
+.box1 .img,
+.box2 .img,
+.box3 .img {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* style for image-text-content */
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.text h1 {
+    margin: 0;
+    font-size: 24px;
+
+}
+
+.text p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #555;
+    /* make the text color lighter */
+
+}
+
+/* Adjust the text content */
+.text {
+    flex-grow: 1;
+    padding-left: 20px;
+    /* Add some space between text and image */
+}
+
+.text h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.text p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #555;
+    /* Make the text color lighter */
+}
+
+/* To control spacing between image and text and make them more centered */
+.box1 .image,
+.box2 .image,
+.box3 .image {
+    width: 30%;
+    height: auto;
+    margin-right: 20px;
+}
+
+
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .box1, .box2, .box3 {
+        width: 90%; /* Make boxes take up more width on small screens */
+        margin: 10px 0;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto; /* Ensure image scales properly */
+        object-fit: cover; /* Prevent overflow and maintain aspect ratio */
+    }
+
+    .text h1 {
+        font-size: 12px; /* Smaller heading text */
+    }
+
+    .text p {
+        font-size: 12px; /* Smaller paragraph text */
+        line-height: 1.4; /* Make sure text fits within container */
+        word-wrap: break-word;
+    }
+}

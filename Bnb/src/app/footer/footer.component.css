@@ -1,0 +1,83 @@
+.footer.social {
+    text-align: center;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(to right, #000000, #555555);
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-top: 1px solid #444444c1;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer.social p {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+.footer.social .social-icons {
+    margin-top: 1rem;
+}
+
+.footer.social .social-icons a {
+    margin: 0 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    /* size of icon*/
+    transition: color 0.3s, transform 0.3s;
+    /* smooth hover effect */
+}
+
+.footer.social .social-icons a:hover {
+    color: #cea82d;
+    transform: scale(1.2);
+    /* zoom effect on hover */
+}
+
+.footer.social:hover {
+    background: linear-gradient(to right, #333333, #888888);
+    /* lighter gradient on hover */
+    transition: background 0.5s ease-in-out;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Small devices  */
+@media (max-width: 480px) {
+    .footer.social {
+        font-size: 0.8rem;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .footer.social .social-icons a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Medium devices  */
+@media (max-width: 768px) {
+    .footer.social {
+        font-size: 0.85rem;
+    }
+
+    .footer.social .social-icons {
+        gap: 0.75rem;
+    }
+
+    .footer.social .social-icons a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large devices */
+@media (min-width: 1024px) {
+    .footer.social {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .footer.social .social-icons a {
+        font-size: 1.4rem;
+    }
+}

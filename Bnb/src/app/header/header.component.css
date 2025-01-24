@@ -1,0 +1,50 @@
+.header {
+    /* background-image: url(); */
+    background-size: cover;
+    text-align: center;
+    /* padding: 20px; */
+    color: #fff;
+    border: 1px solid black;
+}
+
+.header h1{
+    color: #333;
+    font-family: 'Playwrite Australia SA', sans-serif;
+    font-size: 15px; 
+    margin: 50px 0 0;
+    letter-spacing: 1px
+}
+
+.logo {
+    height: 20px;
+    max-width: 200px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.logo {
+    height: 60px;
+}
+
+
+/* Responsiveness */
+
+@media (max-width: 1024px) {
+
+    .logo {
+        height: 50px;
+    }
+
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .logo {
+        height: 40px;
+    }
+}
+
+/* For very small mobile devices */
+/* @media (max-width: 480px) {
+    
+} */

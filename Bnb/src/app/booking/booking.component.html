@@ -1,0 +1,78 @@
+<div class="booking-container">
+    <header class="header">
+        <div class="logo-navbar-container">
+            <img alt="logo" src="logo.png" class="logo">
+            <div class="nav-bar">
+                <app-navbar></app-navbar>
+            </div>
+        </div>
+        <h1 class="book-heading">Booking</h1>
+    </header>
+
+    <div class="booking-header">
+        <h1>Book your stay at Concordia</h1>
+        <p>Find your perfect room and enjoy your stay at our cozy BnB.</p>
+
+        <!-- Custom message component -->
+        <app-message [customMessage]="customMessage" [type]="messageType" *ngIf="customMessage"></app-message>
+
+        <!---- Form ----->
+        <form class="booking-form" (ngSubmit)="onSubmit()" #form="ngForm">
+            <div class="form-group">
+                <label for="checkin-Date">Checkin Date:</label>
+                <div class="input-container">
+                    <!-- <i class="fas fa-calendar-check"></i> -->
+                    <input type="date" id="checkinDate" name="checkinDate" ngModel #checkin="ngModel" required />
+                </div>
+                <span *ngIf="checkin.touched && !checkin.valid"><i>Check-in date is required!</i></span>
+            </div>
+
+            <div class="form-group">
+                <label for="checkout-Date">Checkout Date:</label>
+                <div class="input-container">
+                    <!-- <i class="fas fa-calendar-day"></i> -->
+                    <input type="date" id="checkoutDate" name="checkoutDate" ngModel #checkout="ngModel" required />
+                </div>
+                <span *ngIf="checkout.touched && !checkout.valid"><i>Check-out date is required!</i></span>
+            </div>
+
+            <div class="form-group">
+                <label for="full-name">Full Name:</label>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter full name" ngModel #fullName="ngModel" required />
+                </div>
+                <span *ngIf="fullName.touched && !fullName.valid"><i>Name is required!</i></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Enter email address" ngModel  #email="ngModel" required />
+                </div>
+                <span *ngIf="email.touched && email.invalid"><i>Email is required!</i></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <div class="input-container">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" ngModel #phone="ngModel" required />
+                </div>
+                <span *ngIf="phone.touched && phone.invalid"><i>Phone number is required!</i></span>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of Guests:</label>
+                <div class="input-container">
+                    <i class="fas fa-user-friends"></i>
+                    <input type="number" id="guests" name="guests" min="1" placeholder="Enter number of guests" ngModel #guests="ngModel" required />
+                </div>
+                <span *ngIf="guests.touched && guests.invalid"><i>Number of guests is required!</i></span>
+            </div>
+            
+            <input type="submit" value="submit" class="submit-button" [disabled]="form.invalid">
+        </form>
+    </div>
+</div>
